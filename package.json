@@ -3,24 +3,37 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "postinstall": "node setup_env.js",
+    "dev:python": "node -e \"const os = require('os'); const p = os.platform() === 'win32' ? 'venv\\\\Scripts\\\\uvicorn' : 'venv/bin/uvicorn'; require('child_process').spawn(p, ['ml.server:app', '--host', '127.0.0.1', '--port', '5328', '--reload'], {stdio: 'inherit'})\"",
+    "dev:next": "next dev",
+    "dev": "concurrently \"npm run dev:python\" \"npm run dev:next\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.4",
+    "@supabase/ssr": "^0.10.0",
+    "@supabase/supabase-js": "^2.101.1",
+    "clsx": "^2.1.1",
+    "concurrently": "^9.2.1",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.7.0",
+    "next": "14.2.35",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.35"
+    "recharts": "^3.8.1",
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "autoprefixer": "^10.4.27",
     "eslint": "^8",
-    "eslint-config-next": "14.2.35"
+    "eslint-config-next": "14.2.35",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5"
   }
 }

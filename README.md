@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Market Pulse 📈
 
-## Getting Started
+Market Pulse is an AI-based full-stack web application for stock prediction and sentiment analysis. It provides users with:
+- Real-time stock data fetching.
+- AI predictions for the next 7 days based on Linear Regression models.
+- Sentiment analysis from latest stock news using NLP.
+- Smart Buy/Hold/Sell recommendations based on price trend & sentiment.
 
-First, run the development server:
+## Tech Stack
+- **Frontend**: Next.js (App Router), React, Tailwind CSS, Shadcn UI, Recharts, Framer Motion
+- **Backend/ML**: Python, FastAPI, yfinance, scikit-learn, TextBlob, Pandas, Numpy
 
+## Quick Start
+
+You only need one command to install everything (Node.js & Python dependencies) and start the development servers concurrently.
+
+### Prerequisites
+- Node.js (v18+ recommended)
+- Python (v3.8+ recommended)
+
+### 1. Install & Run
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
+### 2. Access the Application
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+*(The Python ML server will automatically start on port 5328 in the background and Next.js will proxy requests to it.)*
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Architecture
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/` & `components/` - Next.js frontend code
+- `ml/` - Python FastAPI backend and Machine Learning scripts
+- `setup_env.js` - Automated setup script for Python Virtual Environment run during `npm install`
