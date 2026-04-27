@@ -958,7 +958,7 @@ export default function Dashboard() {
                       <XAxis dataKey="name" hide />
                       <YAxis hide />
                       <Tooltip
-                        formatter={(v: number) => [fmtVolume(v), "Volume"]}
+                        formatter={(v: any) => [fmtVolume(v), "Volume"]}
                         contentStyle={{
                           background: "rgba(10,10,20,0.95)",
                           border: "1px solid rgba(255,255,255,0.08)",
