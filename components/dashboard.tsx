@@ -891,7 +891,7 @@ export default function Dashboard() {
                   <div className="h-72 shimmer rounded-xl" style={{ background: "rgba(255,255,255,0.02)" }} />
                 ) : (
                   <div className="h-72">
-                    <ResponsiveContainer width="100%" height="100%">
+                    <ResponsiveContainer width="100%" height="100%" minWidth={1} minHeight={1}>
                       <AreaChart data={combinedData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                         <defs>
                           <linearGradient id="gradPrice" x1="0" y1="0" x2="0" y2="1">
@@ -953,7 +953,7 @@ export default function Dashboard() {
               {/* Volume chart */}
               {!loading && volumeData.length > 0 && (
                 <div className="h-20 px-2 pb-2 mt-1">
-                  <ResponsiveContainer width="100%" height="100%">
+                  <ResponsiveContainer width="100%" height="100%" minWidth={1} minHeight={1}>
                     <BarChart data={volumeData.slice(-20)} margin={{ top: 0, right: 10, left: 0, bottom: 0 }}>
                       <XAxis dataKey="name" hide />
                       <YAxis hide />
@@ -1014,7 +1014,7 @@ export default function Dashboard() {
                 ) : (
                   <>
                     <div className="relative h-48">
-                      <ResponsiveContainer width="100%" height="100%">
+                      <ResponsiveContainer width="100%" height="100%" minWidth={1} minHeight={1}>
                         <PieChart>
                           <Pie
                             data={pieData}
