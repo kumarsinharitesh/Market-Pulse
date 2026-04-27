@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const isWin = os.platform() === 'win32';
 const venvPath = path.join(__dirname, 'venv');
-const reqPath = path.join(__dirname, 'ml', 'requirements.txt');
+const reqPath = path.join(__dirname, 'requirements.txt');
 
 try {
   console.log('Setting up Python virtual environment...');
